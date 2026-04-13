@@ -495,30 +495,25 @@
 </section>
 
 
+
 <!-- =========================================
      JAVASCRIPT — SCROLL LINE ANIMATIONS
 ========================================= -->
 <script>
-  // IntersectionObserver: draws lines when they enter the viewport
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('drawn');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('drawn');
     });
   }, { threshold: 0.12 });
 
-  // Observe all animatable lines
-  document.querySelectorAll(
-    '.line-h, .line-v, .line-h-dk, .line-v-dk'
-  ).forEach(el => observer.observe(el));
+  document.querySelectorAll('.line-h, .line-v, .line-h-dk, .line-v-dk')
+    .forEach(el => observer.observe(el));
 
-  // Trigger intro lines on page load with stagger
-  const introLines = document.querySelectorAll('#intro .line-h, #intro .line-v');
-  introLines.forEach((el, i) => {
-    setTimeout(() => el.classList.add('drawn'), 400 + i * 180);
+  // Trigger intro lines immediately on load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#intro .line-h, #intro .line-v')
+      .forEach(el => el.classList.add('drawn'));
   });
 </script>
-
 </body>
 </html>
