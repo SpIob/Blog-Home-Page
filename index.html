@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Home Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Mulish:wght@300;400;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- =========================================
+     SECTION 1 — INTRO
+========================================= -->
+<section id="intro" class="terra-bg">
+
+  <!-- Grid overlay lines (draw on load) -->
+  <div class="intro-grid" aria-hidden="true">
+    <!-- Horizontal -->
+    <div class="line-h" style="top:36%; left:0; right:0; position:absolute;"></div>
+    <div class="line-h delay-2" style="top:72%; left:0; right:0; position:absolute;"></div>
+    <!-- Vertical -->
+    <div class="line-v delay-1" style="left:11%; top:0; bottom:0; position:absolute;"></div>
+    <div class="line-v delay-2" style="left:50%; top:0; bottom:0; position:absolute;"></div>
+    <div class="line-v delay-3" style="left:89%; top:0; bottom:0; position:absolute;"></div>
+  </div>
+
+  <!-- 4-corner photo placeholders -->
+  <div class="intro-quads">
+    <div class="intro-quad">
+      <div class="ph r4" style="width:clamp(140px,16vw,220px); height:clamp(140px,16vw,210px);"><img src="Images/1.png"></div>
+    </div>
+    <div class="intro-quad">
+      <div class="ph r4" style="width:clamp(160px,18vw,260px); height:clamp(150px,17vw,220px);"><img src="Images/2.png"></div>
+    </div>
+    <div class="intro-quad">
+      <div class="ph r4" style="width:clamp(150px,17vw,240px); height:clamp(150px,17vw,225px);"><img src="Images/3.png"></div>
+    </div>
+    <div class="intro-quad">
+      <div class="ph r4" style="width:clamp(170px,20vw,290px); height:clamp(160px,18vw,240px);"><img src="Images/4.png"></div>
+    </div>
+  </div>
+
+  <!-- Center name block -->
+  <div class="intro-name-wrap">
+    <div style="position:relative; display:inline-block;">
+      <span class="intro-fashion-tag">Fashion Designer</span>
+
+      <!-- Sparkles top-right of name -->
+      <div class="intro-sparkles-row">
+        <svg class="sp" width="30" height="30" viewBox="0 0 100 100" fill="white">
+          <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+        </svg>
+        <svg class="sp" width="20" height="20" viewBox="0 0 100 100" fill="white">
+          <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+        </svg>
+      </div>
+
+      <div class="intro-main-name">OLIVIA</div>
+      <div class="intro-main-name">WILSON</div>
+    </div>
+  </div>
+
+  <!-- Scattered sparkles -->
+  <svg style="position:absolute;top:14%;left:19%;pointer-events:none;z-index:4;" width="75" height="75" viewBox="0 0 100 100" fill="white">
+    <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+  </svg>
+  <svg style="position:absolute;top:10%;right:25%;pointer-events:none;z-index:4;" width="32" height="32" viewBox="0 0 100 100" fill="white">
+    <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+  </svg>
+  <svg style="position:absolute;top:6%;right:18%;pointer-events:none;z-index:4;" width="22" height="22" viewBox="0 0 100 100" fill="white">
+    <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+  </svg>
+  <svg style="position:absolute;top:16%;right:14%;pointer-events:none;z-index:4;" width="42" height="42" viewBox="0 0 100 100" fill="white">
+    <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+  </svg>
+</section>
+
+
+<!-- =========================================
+     SECTION 2 — ABOUT ME
+========================================= -->
+<section id="about" class="terra-bg">
+
+  <!-- Decorative border box -->
+  <div class="about-border-box" aria-hidden="true"></div>
+
+  <div class="about-top">
+
+    <!-- "ABOUT ME" label -->
+    <div class="about-label-big">ABOUT<br>ME</div>
+
+    <!-- Animated vertical divider -->
+    <div class="line-v about-vdivider"></div>
+
+    <!-- Name / title block -->
+    <div class="about-name-block">
+      <div class="about-name-large">OLIVIA</div>
+      <div class="about-sub">Fashion Designer</div>
+      <div class="about-name-script">Wilson</div>
+      <!-- Sparkle trio -->
+      <div class="about-spark-row">
+        <svg class="sp" width="28" height="28" viewBox="0 0 100 100" fill="white">
+          <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+        </svg>
+        <svg class="sp" width="22" height="22" viewBox="0 0 100 100" fill="white" style="margin-top:3px;">
+          <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+        </svg>
+        <svg class="sp" width="18" height="18" viewBox="0 0 100 100" fill="white" style="margin-top:5px;">
+          <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Photos -->
+    <div class="about-photos">
+      <div class="ph arch" style="width:170px;height:250px;margin-top:1.5rem;"><img src="Images/2.png"></div>
+      <div class="ph r4"   style="width:210px;height:310px;"><img src="Images/3.png"></div>
+    </div>
+  </div>
+
+  <!-- Bio text -->
+  <div class="about-bio">
+    <p>
+      I'm Olivia Wilson, a fashion designer who works with structure, fabric, and small details that most people overlook. I like clothes that feel considered, not rushed. My work leans toward clean lines, but I don't avoid risk when a piece needs it.
+    </p>
+    <p class="about-bio-p2">
+      I design with people in mind, not trends. Every project starts with a person's habits, their movement, and what they actually wear day to day. That's what shapes the final piece more than anything else.
+    </p>
+  </div>
+
+  <!-- Bottom sparkles (outline style) -->
+  <div class="about-sparkles-btm" aria-hidden="true">
+    <svg class="sp" width="32" height="32" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+      <path d="M50,5 L54,46 L95,50 L54,54 L50,95 L46,54 L5,50 L46,46Z"/>
+    </svg>
+    <svg class="sp" width="44" height="44" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+      <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+    </svg>
+    <svg class="sp" width="28" height="28" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="3">
+      <path d="M50,5 L54,46 L95,50 L54,54 L50,95 L46,54 L5,50 L46,46Z"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- =========================================
+     SECTION 3 — MY STORY
+========================================= -->
+<section id="story">
+  <div class="story-grad-tl" aria-hidden="true"></div>
+  <div class="story-grad-br" aria-hidden="true"></div>
+
+  <div class="story-layout">
+
+    <!-- Left: stacked / overlapping photos -->
+    <div class="story-photos">
+      <div class="ph ph-lt r4" style="width:72%;height:clamp(260px,32vw,380px);position:relative;z-index:2;"><img src="Images/5.png"></div>
+      <div class="ph ph-lt r4" style="width:56%;height:clamp(200px,24vw,280px);position:absolute;right:1.5rem;bottom:2rem;z-index:3;transform:rotate(-3deg);box-shadow:0 8px 28px rgba(196,107,96,0.18);"><img src="Images/6.png"></div>
+    </div>
+
+    <!-- Animated vertical divider -->
+    <div class="line-v-dk" style="align-self:stretch;"></div>
+
+    <!-- Right: title + text -->
+    <div class="story-content">
+
+      <!-- MY STORY title -->
+      <div class="story-title-row" style="margin-bottom:1.5rem;">
+        <div class="story-title">MY<br>STORY</div>
+        <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="3" style="margin-top:0.4rem;">
+          <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+        </svg>
+      </div>
+
+      <!-- Line 1 -->
+      <div class="line-h-dk" style="margin-bottom:1.8rem;"></div>
+
+      <!-- Paragraph 1 -->
+      <p class="story-text" style="margin-bottom:1rem;">
+        I didn't start in a studio. I started by altering my own clothes because nothing fit the way I wanted. That turned into making pieces from scratch, then taking on small client work. It grew slowly, but it stayed honest.
+      </p>
+      <!-- Sparkle aligned right -->
+      <div style="display:flex;justify-content:flex-end;margin-bottom:1.5rem;">
+        <svg class="sp" width="52" height="52" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="2.5">
+          <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+        </svg>
+      </div>
+
+      <!-- Line 2 -->
+      <div class="line-h-dk delay-1" style="margin-bottom:1.8rem;"></div>
+
+      <!-- Paragraph 2 with sparkle -->
+      <div class="story-block2">
+        <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="2.5" style="margin-top:0.2rem;">
+          <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+        </svg>
+        <p class="story-text">
+          There wasn't a single turning point. It was a series of small jobs, late nights, and mistakes I had to fix myself. Over time, I built a process that works for me and for the people I design for.
+        </p>
+      </div>
+
+      <!-- Line 3 -->
+      <div class="line-h-dk delay-2" style="margin-top:1.8rem;"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+     SECTION 4 — WHAT I CAN DO FOR YOU
+========================================= -->
+<section id="services">
+  <div class="services-grad-br" aria-hidden="true"></div>
+
+  <div class="services-layout">
+
+    <!-- Left: 2 photos stacked -->
+    <div class="services-photos">
+      <div class="ph ph-lt" style="width:100%;height:45vh;"><img src="Images/2.png"></div>
+      <div class="ph ph-lt r4" style="width:78%;height:42vh;margin:1.5rem;"><img src="Images/7.png"></div>
+    </div>
+
+    <!-- Animated vertical divider -->
+    <div class="line-v-dk" style="align-self:stretch;"></div>
+
+    <!-- Right: title + numbered items -->
+    <div class="services-content">
+      <div class="services-border-box" aria-hidden="true"></div>
+
+      <!-- Title with sparkle -->
+      <div class="services-title-row">
+        <div class="services-title">WHAT I<br>CAN DO<br>FOR YOU</div>
+        <svg class="sp" width="44" height="44" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="2.5" style="margin-top:0.3rem;">
+          <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+        </svg>
+      </div>
+
+      <!-- Divider -->
+      <div class="line-h-dk" style="margin-bottom:2rem;"></div>
+
+      <!-- Item 1 -->
+      <div style="display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:2.5rem;">
+        <span class="svc-num">1</span>
+        <p class="svc-text">I design clothing that fits your body and your routine. Whether it's a single piece or a small collection, I focus on how it sits, moves, and lasts over time.</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+        <span class="svc-num">2</span>
+        <p class="svc-text">I can take an idea and shape it into something wearable. If you already have a concept, I refine it. If you don't, I help you build one from the ground up.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+     SECTION 5 — THE WAY I WORK
+========================================= -->
+<section id="process" class="terra-bg">
+
+  <!-- Header -->
+  <div class="process-header">
+    <svg class="sp" width="52" height="52" viewBox="0 0 100 100" fill="white">
+      <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+    </svg>
+    <h2 class="process-title">THE WAY I WORK</h2>
+    <!-- Top-right sparkle -->
+    <svg class="sp process-spark-top-r" width="28" height="28" viewBox="0 0 100 100" fill="white">
+      <path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/>
+    </svg>
+  </div>
+
+  <!-- Line under header -->
+  <div class="line-h" style="margin:0 4rem;"></div>
+
+  <!-- 3 columns -->
+  <div class="process-cols">
+
+    <!-- Col 1 -->
+    <div class="process-col">
+      <p>I start with a conversation. I ask direct questions about how you live and what you need from your clothes. That saves time later.</p>
+    </div>
+
+    <!-- Vertical divider 1 -->
+    <div class="line-v delay-1" style="align-self:stretch;"></div>
+
+    <!-- Col 2 -->
+    <div class="process-col">
+      <p class="nudge-mid">After that, I sketch and test. I don't rush to final pieces. I'd rather adjust early than fix something after it's already made.</p>
+    </div>
+
+    <!-- Vertical divider 2 -->
+    <div class="line-v delay-2" style="align-self:stretch;"></div>
+
+    <!-- Col 3 -->
+    <div class="process-col" style="position:relative;">
+      <p class="nudge-last">I keep the process clear. You'll know what stage we're in, what changes are being made, and why they matter.</p>
+      <!-- Bottom-right sparkle -->
+      <svg class="sp" style="position:absolute;bottom:1.5rem;right:0;opacity:0.65;" width="58" height="58" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5">
+        <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+     SECTION 6 — EDUCATIONAL BACKGROUND
+========================================= -->
+<section id="education" class="terra-bg">
+
+  <!-- Title row -->
+  <div class="edu-title-row">
+    <h2 class="edu-title">EDUCATIONAL<br>BACKGROUND</h2>
+
+    <!-- Right deco: sparkle + arch image -->
+    <div class="edu-right-deco">
+      <svg class="sp" width="75" height="75" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2" style="opacity:0.7;">
+        <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+      </svg>
+      <div class="ph arch" style="width:200px;height:250px;"><img src="Images/6.png"></div>
+    </div>
+  </div>
+
+  <!-- Animated horizontal line -->
+  <div class="line-h" style="margin-bottom:2.5rem;"></div>
+
+  <!-- Body: left arch image + right items -->
+  <div class="edu-body">
+    <div class="ph arch" style="width:195px;height:250px;margin-top:1.5rem;"><img src="Images/1.png"></div>
+
+    <div class="edu-items">
+      <!-- Item 1 -->
+      <div class="edu-item">
+        <svg class="sp" width="44" height="44" viewBox="0 0 100 100" fill="white">
+          <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+        </svg>
+        <p>I studied fashion design with a focus on construction and pattern-making. Most of my time was spent learning how garments actually come together, not just how they look.</p>
+      </div>
+      <!-- Item 2 -->
+      <div class="edu-item" style="padding-left:4rem;">
+        <svg class="sp" width="44" height="44" viewBox="0 0 100 100" fill="white">
+          <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+        </svg>
+        <p>Outside formal study, I worked with local tailors and small workshops. That hands-on work shaped how I approach fit and finishing.</p>
+      </div>
+      <!-- Item 3 -->
+      <div class="edu-item" style="padding-left:8rem;">
+        <svg class="sp" width="44" height="44" viewBox="0 0 100 100" fill="white">
+          <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+        </svg>
+        <p>I continue to learn through practice. Each project adds something new, whether it's a technique, a fabric, or a better way to solve a problem.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom line -->
+  <div class="line-h delay-1" style="margin-top:2rem;"></div>
+</section>
+
+
+<!-- =========================================
+     SECTION 7 — OTHER SERVICES
+========================================= -->
+<section id="other" class="terra-bg">
+
+  <!-- Top decorative band -->
+  <div class="other-band top-band" aria-hidden="true">
+    <div class="line-h" style="bottom:0;left:0;right:0;position:absolute;"></div>
+    <div class="other-band-sparks">
+      <svg class="sp" width="32" height="32" viewBox="0 0 100 100" fill="white"><path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/></svg>
+      <svg class="sp" width="46" height="46" viewBox="0 0 100 100" fill="white"><path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/></svg>
+      <svg class="sp" width="32" height="32" viewBox="0 0 100 100" fill="white"><path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/></svg>
+    </div>
+    <div class="other-band-sparks">
+      <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5"><path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/></svg>
+      <svg class="sp" width="28" height="28" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5"><path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/></svg>
+      <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5"><path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/></svg>
+    </div>
+  </div>
+
+  <!-- Main: title | divider | content -->
+  <div class="other-main">
+
+    <div class="other-title-col">
+      <h2 class="other-title">OTHER<br>SERVICES</h2>
+    </div>
+
+    <!-- Animated vertical divider -->
+    <div class="line-v" style="align-self:stretch;"></div>
+
+    <div class="other-content-col">
+      <!-- Small circle image top-right -->
+      <div class="ph round other-circle-top-r" style="width:115px;height:115px;"><img src="Images/8.png"></div>
+
+      <!-- 2×2 text grid -->
+      <div class="other-text-grid" style="margin-top:1.5rem;">
+        <p>I offer clothing alterations for pieces that need adjustment but not a full redesign. This includes resizing, reshaping, and small structural fixes.</p>
+        <p>I provide styling guidance for clients who want a more consistent wardrobe. The focus is on pieces that work together without overcomplicating things.</p>
+        <p>I help develop small fashion lines for new brands. This covers design, sampling, and preparing pieces for production.</p>
+        <p>I also consult on fabric selection and sourcing. Choosing the right material early prevents problems later in the process.</p>
+      </div>
+
+      <!-- Circle images row -->
+      <div class="other-circles-row">
+        <div class="ph round" style="width:155px;height:155px;"><img src="Images/7.png"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom decorative band -->
+  <div class="other-band bot-band" aria-hidden="true">
+    <div class="line-h delay-1" style="top:0;left:0;right:0;position:absolute;"></div>
+    <div class="other-band-sparks">
+      <svg class="sp" width="32" height="32" viewBox="0 0 100 100" fill="white"><path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/></svg>
+      <svg class="sp" width="46" height="46" viewBox="0 0 100 100" fill="white"><path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/></svg>
+      <svg class="sp" width="32" height="32" viewBox="0 0 100 100" fill="white"><path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/></svg>
+    </div>
+    <div class="other-band-sparks">
+      <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5"><path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/></svg>
+      <svg class="sp" width="28" height="28" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5"><path d="M50,0 L54,46 L100,50 L54,54 L50,100 L46,54 L0,50 L46,46Z"/></svg>
+      <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="2.5"><path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/></svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+     SECTION 8 — GET IN TOUCH
+========================================= -->
+<section id="contact">
+  <!-- Pink gradient corners -->
+  <div class="contact-grad contact-grad-tl" aria-hidden="true"></div>
+  <div class="contact-grad contact-grad-tr" aria-hidden="true"></div>
+  <div class="contact-grad contact-grad-bl" aria-hidden="true"></div>
+  <div class="contact-grad contact-grad-br" aria-hidden="true"></div>
+
+  <!-- Top band: image + sparkle -->
+  <div class="contact-top-band">
+    <div class="ph ph-lt r4" style="width:clamp(200px,20vw,280px);height:clamp(160px,16vw,220px);margin-top:auto;"><img src="Images/4.png"></div>
+    <svg class="sp" style="margin-bottom:2rem;opacity:0.65;" width="68" height="68" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="2.5">
+      <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+    </svg>
+  </div>
+
+  <!-- Animated horizontal divider -->
+  <div class="line-h-dk"></div>
+
+  <!-- Main 3-column layout -->
+  <div class="contact-main">
+
+    <!-- GET IN TOUCH title -->
+    <div class="contact-title-col">
+      <h2 class="contact-title">GET IN<br>TOUCH!</h2>
+    </div>
+
+    <!-- Arch image center -->
+    <div class="contact-img-col">
+      <div class="ph ph-lt arch" style="width:clamp(200px,20vw,280px);height:clamp(280px,28vw,360px);"><img src="Images/3.png"></div>
+    </div>
+
+    <!-- Contact info -->
+    <div class="contact-info-col">
+      <div>
+        <div class="contact-info-label">Email:</div>
+        <div class="contact-info-val">oliviawilson@gmail.com</div>
+      </div>
+      <div>
+        <div class="contact-info-label">Phone:</div>
+        <div class="contact-info-val">123-456-7890</div>
+      </div>
+      <div>
+        <div class="contact-info-label">Website:</div>
+        <div class="contact-info-val">www.oliviawilson.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom band sparkles -->
+  <div class="contact-bot-band" aria-hidden="true">
+    <svg class="sp" width="48" height="48" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="2.5" style="opacity:0.55;">
+      <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+    </svg>
+    <svg class="sp" width="38" height="38" viewBox="0 0 100 100" fill="none" stroke="#c46b60" stroke-width="2.5" style="opacity:0.55;">
+      <path d="M50,0 L53,34 L64,12 L54,47 L100,50 L65,55 L78,88 L52,62 L50,100 L48,62 L22,88 L46,55 L0,50 L46,47 L36,12 L47,34Z"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- =========================================
+     JAVASCRIPT — SCROLL LINE ANIMATIONS
+========================================= -->
+<script>
+  // IntersectionObserver: draws lines when they enter the viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('drawn');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  // Observe all animatable lines
+  document.querySelectorAll(
+    '.line-h, .line-v, .line-h-dk, .line-v-dk'
+  ).forEach(el => observer.observe(el));
+
+  // Trigger intro lines on page load with stagger
+  const introLines = document.querySelectorAll('#intro .line-h, #intro .line-v');
+  introLines.forEach((el, i) => {
+    setTimeout(() => el.classList.add('drawn'), 400 + i * 180);
+  });
+</script>
+
+</body>
+</html>

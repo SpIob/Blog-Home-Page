@@ -1,0 +1,778 @@
+    :root {
+        --terra: #dc7669;
+        --terra-dark: #c46b60;
+        --terra-accent: #f56054;
+        --white: #ffffff;
+        --cream: #faf5f3;
+        --line-light: rgba(255,255,255,0.35);
+        --line-dark: rgba(196,107,96,0.3);
+        --text-on-light: #c46b60;
+        }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Mulish', sans-serif;
+      overflow-x: hidden;
+      background: var(--cream);
+    }
+
+    /* =============================================
+       ANIMATED TERRACOTTA BACKGROUND
+    ============================================= */
+    @keyframes bgPulse {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .terra-bg {
+      background: radial-gradient(ellipse at 8% 40%, #e89186 0%, #dc7669 45%, #c96058 100%);
+      background-size: 220% 220%;
+      animation: bgPulse 9s ease infinite;
+    }
+
+    /* =============================================
+       SCROLL-ANIMATED LINES
+    ============================================= */
+    .line-h {
+      height: 1px;
+      background: var(--line-light);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .line-h.from-right {
+      transform-origin: right center;
+    }
+    .line-v {
+      width: 1px;
+      background: var(--line-light);
+      transform: scaleY(0);
+      transform-origin: top center;
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .line-h-dk {
+      height: 1px;
+      background: var(--line-dark);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .line-v-dk {
+      width: 1px;
+      background: var(--line-dark);
+      transform: scaleY(0);
+      transform-origin: top center;
+      transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .line-h.drawn, .line-h-dk.drawn { transform: scaleX(1); }
+    .line-v.drawn, .line-v-dk.drawn { transform: scaleY(1); }
+
+    /* Staggered delays for sibling lines */
+    .delay-1 { transition-delay: 0.15s; }
+    .delay-2 { transition-delay: 0.3s; }
+    .delay-3 { transition-delay: 0.45s; }
+    .delay-4 { transition-delay: 0.6s; }
+
+    /* =============================================
+       IMAGE PLACEHOLDERS
+    ============================================= */
+    .ph {
+      background: rgba(0,0,0,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Mulish', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      flex-shrink: 0;
+    }
+    .ph img {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+    .ph-lt {
+      background: rgba(196,107,96,0.1);
+      color: rgba(196,107,96,0.3);
+    }
+
+    /* =============================================
+       SHAPE HELPERS
+    ============================================= */
+    .arch  { border-radius: 50% 50% 0 0 / 55% 55% 0 0; overflow: hidden; }
+    .round { border-radius: 50%; overflow: hidden; }
+    .r4    { border-radius: 4px; overflow: hidden; }
+
+    /* =============================================
+       SPARKLE SVG UTILITY CLASSES
+    ============================================= */
+    .sp { flex-shrink: 0; display: block; }
+
+    /* =============================================
+       SECTION 1 — INTRO
+    ============================================= */
+    #intro {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Intro grid overlay */
+    .intro-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .intro-grid .line-h,
+    .intro-grid .line-v {
+      position: absolute;
+    }
+
+    /* Intro photo quadrants */
+    .intro-quads {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      min-height: 100vh;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+    .intro-quad {
+      display: flex;
+    }
+    .intro-quad:nth-child(1) { align-items: flex-start; justify-content: flex-start; }
+    .intro-quad:nth-child(2) { align-items: flex-start; justify-content: flex-end; }
+    .intro-quad:nth-child(3) { align-items: flex-end;   justify-content: flex-start; }
+    .intro-quad:nth-child(4) { align-items: flex-end;   justify-content: flex-end; }
+
+    /* Center name overlay */
+    .intro-name-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      text-align: center;
+      pointer-events: none;
+      width: 55%;
+    }
+    .intro-fashion-tag {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.5rem, 0.9vw, 0.75rem);
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      position: absolute;
+      left: -2rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .intro-main-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 7vw, 6.5rem);
+      color: white;
+      text-transform: uppercase;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+    }
+    .intro-sparkles-row {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 0.3rem;
+    }
+
+    /* =============================================
+       SECTION 2 — ABOUT ME
+    ============================================= */
+    #about {
+      position: relative;
+      padding: 4rem;
+      overflow: hidden;
+    }
+
+    .about-border-box {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 63%;
+      height: 52%;
+      border: 1px solid rgba(255,255,255,0.22);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-top {
+      display: grid;
+      grid-template-columns: minmax(140px, 180px) 1px 1fr auto;
+      align-items: center;
+      gap: 0;
+      position: relative;
+      z-index: 1;
+      min-height: 380px;
+    }
+
+    .about-label-big {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      color: white;
+      text-transform: uppercase;
+      line-height: 0.88;
+      padding-right: 1.5rem;
+    }
+
+    .about-vdivider {
+      align-self: stretch;
+      margin: 0 2rem;
+    }
+
+    .about-name-block { padding: 0 2rem; }
+
+    .about-name-large {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      color: white;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .about-sub {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.65rem, 1.1vw, 0.85rem);
+      letter-spacing: 0.32em;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+      margin: 0.4rem 0;
+    }
+    .about-name-script {
+      font-family: 'Parisienne', cursive;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: white;
+      line-height: 1.1;
+    }
+    .about-spark-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .about-photos {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .about-bio {
+      position: relative;
+      z-index: 1;
+      max-width: 50%;
+      margin-top: 2rem;
+    }
+    .about-bio p {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+      color: white;
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .about-bio-p2 { padding-left: 3rem; }
+    .about-sparkles-btm {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      margin-top: 2rem;
+      opacity: 0.65;
+    }
+
+    /* =============================================
+       SECTION 3 — MY STORY
+    ============================================= */
+    #story {
+      position: relative;
+      background: var(--cream);
+      overflow: hidden;
+      min-height: 100vh;
+    }
+    .story-grad-tl {
+      position: absolute; top: 0; left: 0;
+      width: 42%; height: 60%;
+      background: radial-gradient(ellipse at top left, rgba(245,96,84,0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .story-grad-br {
+      position: absolute; bottom: 0; right: 0;
+      width: 32%; height: 42%;
+      background: radial-gradient(ellipse at bottom right, rgba(245,96,84,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: 44% 1px 1fr;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .story-photos {
+      padding: 4rem 2rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .story-content {
+      padding: 4rem 3rem 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .story-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(4rem, 8vw, 7rem);
+      color: var(--text-on-light);
+      text-transform: uppercase;
+      line-height: 0.85;
+      margin-bottom: 2rem;
+    }
+    .story-title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .story-text {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.78rem, 1.15vw, 0.93rem);
+      color: var(--text-on-light);
+      line-height: 1.85;
+    }
+
+    .story-block2 {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    /* =============================================
+       SECTION 4 — WHAT I CAN DO FOR YOU
+    ============================================= */
+    #services {
+      position: relative;
+      background: var(--cream);
+      overflow: hidden;
+      min-height: 100vh;
+    }
+    .services-grad-br {
+      position: absolute; bottom: 0; right: 0;
+      width: 32%; height: 52%;
+      background: radial-gradient(ellipse at bottom right, rgba(245,96,84,0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 46% 1px 1fr;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .services-photos {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .services-content {
+      padding: 2.5rem 3.5rem;
+      position: relative;
+    }
+
+    .services-border-box {
+      position: absolute;
+      top: 0; right: 0;
+      width: 48%; height: 54%;
+      border: 1px solid rgba(196,107,96,0.22);
+      pointer-events: none;
+    }
+
+    .services-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      color: var(--text-on-light);
+      text-transform: uppercase;
+      line-height: 0.88;
+    }
+    .services-title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .svc-num {
+      font-family: 'Parisienne', cursive;
+      font-size: clamp(4.5rem, 7.5vw, 6.5rem);
+      color: var(--text-on-light);
+      opacity: 0.5;
+      line-height: 1;
+      min-width: 55px;
+    }
+    .svc-text {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.78rem, 1.15vw, 0.93rem);
+      color: var(--text-on-light);
+      line-height: 1.85;
+      padding-top: 0.8rem;
+    }
+
+    /* =============================================
+       SECTION 5 — THE WAY I WORK
+    ============================================= */
+    #process {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-header {
+      padding: 3.5rem 4rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      position: relative;
+    }
+    .process-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5vw, 4.8rem);
+      color: white;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .process-spark-top-r {
+      position: absolute;
+      top: 1rem;
+      right: 5rem;
+    }
+
+    .process-cols {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      padding: 0 4rem 4rem;
+      min-height: 60vh;
+    }
+
+    .process-col {
+      padding: 2.5rem 2rem;
+    }
+    .process-col:first-child { padding-left: 0; }
+    .process-col:last-child  { padding-right: 0; position: relative; }
+
+    .process-col p {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.83rem, 1.25vw, 0.98rem);
+      color: white;
+      line-height: 2;
+    }
+    .process-col p.nudge-mid  { margin-top: 4rem; }
+    .process-col p.nudge-last { margin-top: 8rem; }
+
+    /* =============================================
+       SECTION 6 — EDUCATIONAL BACKGROUND
+    ============================================= */
+    #education {
+      position: relative;
+      overflow: hidden;
+      padding: 4rem;
+    }
+
+    .edu-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      color: white;
+      text-transform: uppercase;
+      line-height: 0.85;
+    }
+    .edu-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .edu-right-deco {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .edu-body {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+    .edu-items {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .edu-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .edu-item p {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.78rem, 1.15vw, 0.93rem);
+      color: white;
+      line-height: 1.85;
+    }
+
+    /* =============================================
+       SECTION 7 — OTHER SERVICES
+    ============================================= */
+    #other { position: relative; overflow: hidden; }
+
+    .other-band {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      position: relative;
+    }
+    .other-band .line-h {
+      position: absolute;
+      left: 0; right: 0;
+    }
+    .other-band.top-band .line-h { bottom: 0; }
+    .other-band.bot-band .line-h { top: 0; }
+
+    .other-band-sparks {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .other-main {
+      display: grid;
+      grid-template-columns: 38% 1px 1fr;
+      min-height: 72vh;
+    }
+
+    .other-title-col {
+      padding: 4rem;
+      display: flex;
+      align-items: center;
+    }
+    .other-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      color: white;
+      text-transform: uppercase;
+      line-height: 0.88;
+    }
+
+    .other-content-col {
+      padding: 3rem 3rem 3rem 3rem;
+      position: relative;
+    }
+    .other-text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 3rem;
+      max-width: 88%;
+    }
+    .other-text-grid p {
+      font-family: 'Mulish', sans-serif;
+      font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+      color: white;
+      line-height: 1.85;
+    }
+    .other-circles-row {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+      padding-left: 2rem;
+    }
+    .other-circle-top-r {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+
+    /* =============================================
+       SECTION 8 — GET IN TOUCH
+    ============================================= */
+    #contact {
+      position: relative;
+      background: white;
+      overflow: hidden;
+    }
+
+    .contact-grad { position: absolute; pointer-events: none; }
+    .contact-grad-tl { top:0; left:0;   width:28%; height:38%; background: radial-gradient(ellipse at top left,    rgba(245,96,84,0.22) 0%, transparent 65%); }
+    .contact-grad-tr { top:0; right:0;  width:26%; height:42%; background: radial-gradient(ellipse at top right,   rgba(245,96,84,0.18) 0%, transparent 65%); }
+    .contact-grad-bl { bottom:0; left:0; width:30%; height:40%; background: radial-gradient(ellipse at bottom left, rgba(245,96,84,0.25) 0%, transparent 65%); }
+    .contact-grad-br { bottom:0; right:0; width:26%; height:36%; background: radial-gradient(ellipse at bottom right,rgba(245,96,84,0.22) 0%, transparent 65%); }
+
+    .contact-top-band {
+      display: flex;
+      align-items: flex-end;
+      gap: 3rem;
+      padding: 0 6rem;
+      height: 260px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      min-height: 55vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-title-col {
+      padding: 4rem;
+      display: flex;
+      align-items: center;
+    }
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      color: var(--text-on-light);
+      text-transform: uppercase;
+      line-height: 0.88;
+    }
+
+    .contact-img-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+    }
+
+    .contact-info-col {
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.2rem;
+    }
+    .contact-info-label {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.88rem, 1.25vw, 1rem);
+      color: var(--text-on-light);
+      margin-bottom: 0.3rem;
+    }
+    .contact-info-val {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+      color: var(--text-on-light);
+      opacity: 0.8;
+    }
+
+    .contact-bot-band {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      border-top: 1px solid rgba(196,107,96,0.15);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .about-top { grid-template-columns: auto 1px 1fr; }
+      .about-photos { display: none; }
+
+      .intro-name-wrap { width: 70%; }
+    }
+
+    @media (max-width: 768px) {
+      #about { padding: 2.5rem 1.5rem; }
+      .about-top {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 1.5rem;
+      }
+      .about-vdivider { display: none; }
+      .about-name-block { padding: 0; }
+      .about-bio { max-width: 100%; }
+
+      .story-layout,
+      .services-layout,
+      .other-main,
+      .contact-main {
+        grid-template-columns: 1fr;
+      }
+      .line-v-dk, .line-v { display: none; }
+
+      .story-photos { padding: 2rem 1.5rem; }
+      .story-content { padding: 2rem 1.5rem; }
+      .story-title { font-size: 3.5rem; }
+
+      .services-content { padding: 2rem 1.5rem; }
+      .services-border-box { display: none; }
+
+      .process-cols { grid-template-columns: 1fr; padding: 0 1.5rem 2.5rem; }
+      .process-col { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .process-col p.nudge-mid, .process-col p.nudge-last { margin-top: 0; }
+      .process-header { padding: 2.5rem 1.5rem 1.5rem; flex-wrap: wrap; }
+
+      #education { padding: 2.5rem 1.5rem; }
+      .edu-title { font-size: 3rem; }
+      .edu-body { grid-template-columns: 1fr; }
+
+      .other-band { padding: 1rem 1.5rem; }
+      .other-title-col { padding: 2rem 1.5rem; }
+      .other-content-col { padding: 2rem 1.5rem; }
+      .other-text-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .other-title { font-size: 2.5rem; }
+
+      .contact-top-band { padding: 0 1.5rem; height: 180px; }
+      .contact-title-col { padding: 2rem 1.5rem; }
+      .contact-info-col { padding: 2rem 1.5rem; }
+      .contact-bot-band { padding: 1rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .intro-name-wrap { width: 85%; }
+      .intro-main-name { font-size: 2.2rem; }
+      .edu-title { font-size: 2.2rem; }
+      .contact-title { font-size: 2.2rem; }
+      .process-title { font-size: 1.8rem; }
+    }
